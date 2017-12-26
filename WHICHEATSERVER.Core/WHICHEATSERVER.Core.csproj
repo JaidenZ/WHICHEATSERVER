@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04C34EE8-9724-4943-AC82-DD4F6C518DA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WHICHEATSERVER.Core</RootNamespace>
+    <AssemblyName>WHICHEATSERVER.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ssc">
+      <HintPath>..\Lib\ssc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AOP\Data\DataModelProxyConverter.cs" />
+    <Compile Include="AOP\Proxy\InterfaceProxy.cs" />
+    <Compile Include="AOP\Proxy\InvocationHandler.cs" />
+    <Compile Include="AOP\Proxy\Program.cs" />
+    <Compile Include="Collection\SafetyList.cs" />
+    <Compile Include="Component\Contract.cs" />
+    <Compile Include="Component\WorkThreadDictionary.cs" />
+    <Compile Include="Configuration\INIDocument.cs" />
+    <Compile Include="Configuration\INIKey.cs" />
+    <Compile Include="Configuration\INIKeyCollection.cs" />
+    <Compile Include="Configuration\INISection.cs" />
+    <Compile Include="Configuration\INISectionCollection.cs" />
+    <Compile Include="Configuration\NativeMethods.cs" />
+    <Compile Include="Cryptography\Base64Engine.cs" />
+    <Compile Include="Cryptography\MD5Engine.cs" />
+    <Compile Include="Cryptography\RC4Engine.cs" />
+    <Compile Include="Cryptography\SHA1Engine.cs" />
+    <Compile Include="Data\ConnectionFactory\SqlServerConnection.cs" />
+    <Compile Include="Data\Connection\DBConnection.cs" />
+    <Compile Include="Data\Converter\DataModelConverter.cs" />
+    <Compile Include="Data\DBReader.cs" />
+    <Compile Include="Data\DbTransaction.cs" />
+    <Compile Include="Data\DBWriter.cs" />
+    <Compile Include="Data\Dynamic\ExpandoObject.cs" />
+    <Compile Include="Data\GlobalSuppressions.cs" />
+    <Compile Include="Data\Repository\AggregateRoot.cs" />
+    <Compile Include="Data\Repository\IQueryable.cs" />
+    <Compile Include="Data\Repository\IRepository.cs" />
+    <Compile Include="Data\Repository\Repository.cs" />
+    <Compile Include="Data\SDLHelper.cs" />
+    <Compile Include="Data\Specifications\CountSpecification.cs" />
+    <Compile Include="Data\Specifications\ExpressionSpecification.cs" />
+    <Compile Include="Data\Specifications\ISpecification.cs" />
+    <Compile Include="Data\Specifications\OrderBySpecification.cs" />
+    <Compile Include="Data\Specifications\Specification.cs" />
+    <Compile Include="Data\Specifications\TopSpecification.cs" />
+    <Compile Include="Data\Specifications\WhereSpecification.cs" />
+    <Compile Include="Data\SQLHelper.cs" />
+    <Compile Include="Data\TransactionBase.cs" />
+    <Compile Include="DDD\Events\EventBus.cs" />
+    <Compile Include="DDD\Events\ICallback.cs" />
+    <Compile Include="DDD\Events\IEvent.cs" />
+    <Compile Include="DDD\Events\IEventHandler.cs" />
+    <Compile Include="DDD\Hub\HubAttribute.cs" />
+    <Compile Include="DDD\Hub\HubContainer.cs" />
+    <Compile Include="DDD\Hub\IHub.cs" />
+    <Compile Include="DDD\Service\IoCContainerBase.cs" />
+    <Compile Include="DDD\Service\IServiceBase.cs" />
+    <Compile Include="DDD\Service\ServiceBaseContainer.cs" />
+    <Compile Include="DDD\Service\ServiceFilter.cs" />
+    <Compile Include="DDD\Service\ServiceFilterContainer.cs" />
+    <Compile Include="DDD\Service\ServiceObjectAttribute.cs" />
+    <Compile Include="DDD\Service\ServiceObjectContainer.cs" />
+    <Compile Include="Handler\HandlerManager.cs" />
+    <Compile Include="Handler\IHandlerBase.cs" />
+    <Compile Include="Network\ICommunication.cs" />
+    <Compile Include="Network\IGatewayCommunication.cs" />
+    <Compile Include="Network\MessageReceivedEventArgs.cs" />
+    <Compile Include="Network\SocketExtension.cs" />
+    <Compile Include="Network\Tcp\TcpCommunication.cs" />
+    <Compile Include="Packets\BCD.cs" />
+    <Compile Include="Packets\BinaryStreamWriter.cs" />
+    <Compile Include="Packets\Gateway\GatewayPacketType.cs" />
+    <Compile Include="Packets\Gateway\GatewayPacketBody.cs" />
+    <Compile Include="Packets\Gateway\GatewayPacketHeader.cs" />
+    <Compile Include="Packets\Gateway\GatewayPacketMessage.cs" />
+    <Compile Include="Packets\GroupPackage.cs" />
+    <Compile Include="Packets\IClientMessage.cs" />
+    <Compile Include="Packets\IGatewayMessage.cs" />
+    <Compile Include="Packets\NBuffer.cs" />
+    <Compile Include="Packets\NBufferSplit.cs" />
+    <Compile Include="Packets\NConvert.cs" />
+    <Compile Include="Packets\NString.cs" />
+    <Compile Include="Packets\ObjectSplit.cs" />
+    <Compile Include="Packets\PacketDataEncoder.cs" />
+    <Compile Include="Packets\PacketTextEncoder.cs" />
+    <Compile Include="Packets\Phone\IphoneClientMessage.cs" />
+    <Compile Include="Packets\Phone\PhoneMessageType.cs" />
+    <Compile Include="Packets\Phone\PhonePacketHeader.cs" />
+    <Compile Include="Packets\Phone\PhonePacketMessage.cs" />
+    <Compile Include="Packets\Phone\PhoneProtocolFlags.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\AdvancedObjectFormatter.cs" />
+    <Compile Include="Serialization\AdvancedObjectMarshalAsAttribute.cs" />
+    <Compile Include="Serialization\BinaryFormatter.cs" />
+    <Compile Include="Serialization\FixedLengthFormatter.cs" />
+    <Compile Include="Serialization\NBinaryFormatter.cs" />
+    <Compile Include="Serialization\StringFormatter.cs" />
+    <Compile Include="Serialization\WebSerializer.cs" />
+    <Compile Include="Serialization\XmlSerializer.cs" />
+    <Compile Include="Tools\SystemConfigLoader.cs" />
+    <Compile Include="Tools\SystemConfigModel.cs" />
+    <Compile Include="Utilits\AttributeUnit.cs" />
+    <Compile Include="Utilits\ListUnit.cs" />
+    <Compile Include="Utilits\ModelUnit.cs" />
+    <Compile Include="Utilits\SSCUnit.cs" />
+    <Compile Include="Utilits\StringUnit.cs" />
+    <Compile Include="Utilits\ThreadUnit.cs" />
+    <Compile Include="Utilits\TypeUnit.cs" />
+    <Compile Include="ValueType\ValueTypeFormatter.cs" />
+    <Compile Include="ValueType\ValueTypeUnit.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
