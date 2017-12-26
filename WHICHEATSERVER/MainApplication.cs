@@ -103,8 +103,7 @@
                 if (Regex.IsMatch(command, cmd, RegexOptions.IgnoreCase))
                 {
                     Console.WriteLine("cls                                      清屏");
-                    Console.WriteLine("lc                                       加载缓存");
-                    Console.WriteLine("exit                                     退出服务器程序");
+                    Console.WriteLine("exit                                    退出服务器程序");
                     Console.WriteLine();
                 }
             }
